@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MktLicor/static/css/main.4acbaba2.css",
+    "main.js": "/MktLicor/static/js/main.88885389.js",
+    "index.html": "/MktLicor/index.html",
+    "main.4acbaba2.css.map": "/MktLicor/static/css/main.4acbaba2.css.map",
+    "main.88885389.js.map": "/MktLicor/static/js/main.88885389.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4acbaba2.css",
+    "static/js/main.88885389.js"
+  ]
+}
