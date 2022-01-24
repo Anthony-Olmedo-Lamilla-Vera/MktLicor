@@ -23,23 +23,23 @@ function App() {
       </header>
       <nav>
         <div className="nav-menu">
-          <RiMenuUnfoldFill />
+          <RiMenuUnfoldFill size={25} color="#023047" />
         </div>
         <div className="nav-form">
           <form action="">
             <input type="text" />
             <button>
               {" "}
-              <FaSearchengin />{" "}
+              <FaSearchengin size={15} color="#023047" />{" "}
             </button>
           </form>
         </div>
         <div className="nav-profile">
           <button>
-            <BsCartCheck />
+            <BsCartCheck size={25} color="#023047" />
           </button>
           <button>
-            <AiOutlineUser />
+            <AiOutlineUser size={25} color="#023047" />
           </button>
         </div>
       </nav>
