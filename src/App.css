@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Merriweather", serif;
 }
 body {
   font-family: "Merriweather", serif;
@@ -18,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 2px 2px 0px #184e77;
+
   margin-bottom: 5px;
   background-position: center;
   background-size: cover;
@@ -39,6 +40,7 @@ nav {
   margin-bottom: 10px;
   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   box-shadow: 0px 5px 2px 0.1px #e2d1c3;
+  flex-basis: max-content;
 }
 .nav-profile button,
 .nav-form form > button,
@@ -47,16 +49,28 @@ nav {
 .text-banner form button {
   padding: 6px 8px;
   border: 1px solid #023047;
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: #fff;
 }
 .nav-profile > * {
   margin: 0 2px;
 }
 .nav-form form input {
-  margin-right: 3px;
-  width: 80%;
-  min-width: 20%;
+  width: 70%;
+}
+.nav-form form > * {
+  margin: 0 2px;
+}
+.nav-form form {
+  text-align: center;
+  margin: 0 auto;
+}
+.header-logo a {
+  color: #ffff;
+  text-decoration: none;
+}
+.nav-form {
+  width: 50%;
 }
 .banner-suscripcion {
   border-radius: 30px;
@@ -170,4 +184,92 @@ nav {
   display: flex;
   overflow-x: scroll;
   flex-direction: row;
+}
+/*CART */
+
+.title-cart p {
+  font-style: italic;
+  text-align: center;
+  padding: 30px 0;
+  font-weight: bold;
+}
+.title-product p {
+  font-weight: bold;
+}
+.item-cart {
+  display: grid;
+
+  padding: 20px 0;
+  border-bottom: 2px solid #e5e5e5;
+  align-items: center;
+  grid-template-columns: repeat(2, 50%);
+  gap: 8px;
+}
+.img-prod img {
+  width: 100%;
+}
+.content-cart {
+  padding: 0 12px;
+}
+.img-prod {
+  text-align: center;
+}
+.title-product,
+.precio-product,
+.cantidad-product {
+  padding: 5px 0;
+}
+.cantidad-product form input {
+  width: 50%;
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-family: "Merriweather", serif;
+  outline: none;
+}
+.text-product {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.button-quitar-cart button {
+  background-color: #a8201a;
+  padding: 8px 5px;
+  border-style: none;
+  border-radius: 5px;
+}
+.button-pagar {
+  text-align: center;
+  margin: 20px 0;
+}
+.button-pagar button {
+  color: #fca311;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #000000;
+  border-style: none;
+  border-radius: 5px;
+  padding: 12px 60px;
+}
+.text-cart p {
+  text-align: right;
+  font-size: 13px;
+  color: #a8201a;
+}
+.Total {
+  text-align: right;
+
+  font-weight: bold;
+}
+.buttons-domicilio button {
+  padding: 5px 15px;
+  margin: 8px 2px;
+  background-color: #8ecae6;
+  border-style: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.domicilio {
+  margin: 15px 0;
 }
