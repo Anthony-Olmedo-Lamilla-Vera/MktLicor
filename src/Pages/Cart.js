@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemProduct from "../Components/ItemProduct";
+import ModalDelete from "../Components/ModalDelete";
 import Footer from "../Elements/Footer";
 
 function Cart() {
+  const [Delete, setDelete] = useState(false);
   let value = 1;
   return (
     <div className="content-cart">
+      {Delete ? <ModalDelete setValue={setDelete} /> : ""}
       {value === 1 ? (
         <div className="compras-content">
           <div className="title-cart">
-            <p>CARRITO DE COMPRAS </p>
+            <p>Carrito de Compras </p>
           </div>
           <div className="items-cart">
-            <ItemProduct />
-            <ItemProduct />
+            <ItemProduct setValue={setDelete} />
+            <ItemProduct setValue={setDelete} />
           </div>
 
           <div className="domicilio">
             <p>Desea A domicilio ?</p>
             <div className="buttons-domicilio">
-              <form action="">
-                <button>Si </button>
-                <button>No </button>
+              <form>
+                <label htmlFor=""> Si </label>
+                <input type="radio" value="true" />
+                <label htmlFor=""> No </label>
+                <input type="radio" value="false" />
               </form>
             </div>
           </div>

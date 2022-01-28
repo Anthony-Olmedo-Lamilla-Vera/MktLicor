@@ -1,7 +1,7 @@
 import React from "react";
 import { RiDeleteBinFill } from "react-icons/ri";
 
-function ItemProduct() {
+function ItemProduct({ setValue }) {
   return (
     <div className="item-cart">
       <div className="img-prod">
@@ -28,7 +28,11 @@ function ItemProduct() {
           </div>
         </div>
         <div className="button-quitar-cart">
-          <button>
+          <button
+            onClick={() => {
+              setValue(true);
+            }}
+          >
             <RiDeleteBinFill color="#ffff" size={20} />
           </button>
         </div>

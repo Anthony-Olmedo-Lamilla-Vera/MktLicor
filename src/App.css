@@ -192,13 +192,13 @@ nav {
   text-align: center;
   padding: 30px 0;
   font-weight: bold;
+  font-size: 20px;
 }
 .title-product p {
   font-weight: bold;
 }
 .item-cart {
   display: grid;
-
   padding: 20px 0;
   border-bottom: 2px solid #e5e5e5;
   align-items: center;
@@ -262,7 +262,7 @@ nav {
 
   font-weight: bold;
 }
-.buttons-domicilio button {
+.buttons-domicilio input {
   padding: 5px 15px;
   margin: 8px 2px;
   background-color: #8ecae6;
@@ -272,4 +272,137 @@ nav {
 }
 .domicilio {
   margin: 15px 0;
+}
+.nav-menu button {
+  border-style: none;
+  background: none;
+}
+.back-menu {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: fixed;
+  backdrop-filter: blur(2px);
+
+  animation: linear 5s normal;
+}
+.slider-menu {
+  padding-bottom: 15px;
+  position: relative;
+  background-color: #fff;
+  height: 100vh;
+  width: 90%;
+  border-top-right-radius: 50px;
+
+  overflow-y: scroll;
+}
+.title-menu nav {
+  width: 100%;
+  background-color: #ffff;
+  background-image: none;
+  box-shadow: none;
+}
+.title-menu nav ul {
+  width: 100%;
+}
+
+.cont-header {
+  position: relative;
+}
+.title-menu p {
+  padding: 10px 0;
+}
+.title-menu nav ul li {
+  list-style: none;
+  position: relative;
+  padding: 15px 0;
+  border-bottom: 2px solid #e5e5e5;
+}
+.title-menu nav ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  padding: 0 20px;
+}
+.title-menu nav ul li span {
+  position: absolute;
+  right: 70px;
+}
+.title-menu {
+  padding: 0 9px;
+}
+.head-menu {
+  background-color: #e5e5e5;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.head-menu button {
+  background-color: transparent;
+  border-style: none;
+  border-top-right-radius: 50px;
+  border-bottom: 1px solid #000;
+}
+.head-menu p {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.modal-cart-delete {
+  position: fixed;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 40vh;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+.cont-modal-delete {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 20px 10px;
+  border-radius: 15px;
+  background-color: #e5e5e5;
+}
+.confirm-modal-delete form {
+  text-align: center;
+}
+.confirm-modal-delete {
+  padding: 20px 0;
+  flex-wrap: nowrap;
+}
+.head-modal-delete p {
+  text-align: center;
+}
+.option-delete {
+  display: inline;
+  padding: 5px 10px;
+  background: none;
+}
+.button-cancelar {
+  text-align: center;
+}
+.option-delete button {
+  border-style: none;
+  background-color: none;
+}
+.button-cancelar button {
+  padding: 12px 30px;
+  border-style: none;
+  border: 1px solid #000;
+  background-color: #0f8b8d;
+  border-radius: 5px;
+}
+.si_delete {
+  font-weight: bold;
+  color: #a8201a;
+  border-bottom: 4px solid #a8201a;
+}
+.option-delete button {
+  background: none;
+  cursor: pointer;
+}
+.option-delete .si_delete {
+  border-bottom: 2px solid #a8201a;
 }

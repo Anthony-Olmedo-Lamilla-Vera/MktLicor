@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navs from "../Components/Navs";
 
 function Header() {
   return (
-    <>
+    <div className="cont-header">
       <header className="App-header">
         <div className="header-logo">
           <Link to="/MktLicor">
@@ -18,8 +17,7 @@ function Header() {
           <p>Ofertas!</p>
         </div>
       </header>
-      <Navs />
-    </>
+    </div>
   );
 }
 
