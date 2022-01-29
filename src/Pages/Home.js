@@ -10,7 +10,6 @@ function Home() {
       <HeroSubscription />
       <SectionCategoria />
       <SectionNovedades />
-      <Footer />
     </>
   );
 }

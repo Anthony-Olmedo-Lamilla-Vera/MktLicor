@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { BsCartDash } from "react-icons/bs";
 import ItemProduct from "../Components/ItemProduct";
 import ModalDelete from "../Components/ModalDelete";
 import Footer from "../Elements/Footer";
+import { Link } from "react-router-dom";
+import { WiDirectionRight } from "react-icons/wi";
 
 function Cart() {
   const [Delete, setDelete] = useState(false);
-  let value = 1;
+  let value = 0;
   return (
     <div className="content-cart">
       {Delete ? <ModalDelete setValue={setDelete} /> : ""}
@@ -44,9 +47,20 @@ function Cart() {
           </div>
         </div>
       ) : (
-        <p>no hay </p>
+        <div className="cont-vacio">
+          <div className="title-header-vacio">
+            <p>No hay Elementos en el Carrito </p>
+          </div>
+          <div className="icon-header-vacio">
+            <BsCartDash size={50} />
+          </div>
+          <div className="button-vacio-cart">
+            <Link to="/MktLicor">Ir a Comprar</Link>
+
+            <WiDirectionRight size={60} />
+          </div>
+        </div>
       )}
-      <Footer />
     </div>
   );
 }

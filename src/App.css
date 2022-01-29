@@ -406,3 +406,109 @@ nav {
 .option-delete .si_delete {
   border-bottom: 2px solid #a8201a;
 }
+.cont-vacio {
+  height: 80vh;
+}
+
+.cont-vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-header-vacio {
+  padding: 30px 10px;
+}
+.title-header-vacio p {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+.button-vacio-cart a {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  align-content: center;
+}
+.button-vacio-cart {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.menu-user {
+  border: 1px solid #e5e5e5;
+  padding: 15px 10px;
+  border-radius: 5px;
+  background-color: #ffff;
+}
+.datos-personales nav {
+  background-image: none;
+  background-color: #fff;
+  border: 0;
+  width: 100%;
+  box-shadow: none;
+  margin: 0;
+}
+
+.datos-personales ul li {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  margin: 0 auto;
+
+  list-style: none;
+}
+.datos-personales ul li a {
+  text-align: center;
+
+  text-decoration: none;
+  padding: 10px 0;
+  color: #000;
+}
+.datos-personales ul {
+  width: 100%;
+}
+.datos-personales ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.menu-user {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.cont-menu-user {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+}
+.design-menu {
+  position: absolute;
+  right: 15px;
+  top: -18px;
+}
+.cont-footer {
+  padding: 15px 10px;
+
+  background-color: rgba(0, 0, 0, 0.904);
+}
+
+footer {
+  width: 100%;
+  font-size: 18px;
+  padding-top: 50px;
+  text-align: center;
+}
+.title-footer p {
+  color: #fca311;
+  font-weight: bold;
+}
+.icons-footer {
+  padding: 10px 0;
+}
+
+.icons-footer a {
+  padding: 0px 10px;
+  color: #fca311;
+}
