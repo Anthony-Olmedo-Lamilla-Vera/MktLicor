@@ -1,38 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiDeleteBinFill } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+import { typesActions } from "../Dates/Reduces";
 
-function ItemProduct({ setValue }) {
+function ItemProduct({ cantidad, setValue, img, price, nombre, id }) {
+  const [Cantidad, setCantidad] = useState(1);
+  const dispatch = useDispatch();
+
+  const KeyUpcantidad = (e) => {
+    setCantidad(e.target.value);
+    dispatch({
+      type: typesActions.CalculoT,
+      cant: {
+        id: id,
+        cantidad: parseInt(e.target.value),
+        subt: e.target.value * price,
+      },
+    });
+  };
+  function DeleteItem() {
+    setValue(true);
+    dispatch({
+      type: typesActions.deleteItem,
+      deleteId: id,
+    });
+  }
+
   return (
     <div className="item-cart">
       <div className="img-prod">
-        <img
-          src="https://img.asmedia.epimg.net/resizer/s8A9gpxfzXlWw1Br_b0PyvssfL8=/360x0/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/X6TOCBOSZNNEPHLLIJYAY63TAI.jpg"
-          alt=""
-        />
+        <img src={img} alt="" />
       </div>
       <div className="text-product">
         <div className="dates-product">
           <div className="title-product">
-            <p>Nombre Producto</p>{" "}
+            <p>{nombre}</p>{" "}
           </div>
           <div className="precio-product">
             <p>
-              Precio : <span> $ 15 </span>
+              Precio : <span> $ {price} </span>
             </p>
           </div>
           <div className="cantidad-product">
             <p>cantidad : </p>
             <form action="">
-              <input value="1" type="number" />
+              <input
+                onChange={(e) => KeyUpcantidad(e)}
+                value={Cantidad}
+                type="number"
+              />
             </form>
           </div>
         </div>
         <div className="button-quitar-cart">
-          <button
-            onClick={() => {
-              setValue(true);
-            }}
-          >
+          <button onClick={DeleteItem}>
             <RiDeleteBinFill color="#ffff" size={20} />
           </button>
         </div>

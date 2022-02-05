@@ -12,6 +12,9 @@ body {
 .header-info {
   display: inline;
 }
+main {
+  min-height: 100vh;
+}
 
 .App-header {
   background-image: url("https://img.freepik.com/foto-gratis/vaso-whisky-o-conac-u-otro-tipo-alcohol-salpicaduras-cubo-hielo-sobre-fondo-madera_288539-20.jpg?size=626&ext=jpg");
@@ -38,8 +41,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-  box-shadow: 0px 5px 2px 0.1px #e2d1c3;
   flex-basis: max-content;
 }
 .nav-profile button,
@@ -49,14 +50,15 @@ nav {
 .text-banner form button {
   padding: 6px 8px;
   border: 1px solid #023047;
-  border-radius: 6px;
-  background-color: #fff;
+  border-radius: 8px;
+  background-color: #fca311;
 }
 .nav-profile > * {
   margin: 0 2px;
 }
 .nav-form form input {
   width: 70%;
+  background: none;
 }
 .nav-form form > * {
   margin: 0 2px;
@@ -190,7 +192,7 @@ nav {
 .title-cart p {
   font-style: italic;
   text-align: center;
-  padding: 30px 0;
+  padding: 20bpx 0;
   font-weight: bold;
   font-size: 20px;
 }
@@ -202,7 +204,7 @@ nav {
   padding: 20px 0;
   border-bottom: 2px solid #e5e5e5;
   align-items: center;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: 0.8fr 1fr;
   gap: 8px;
 }
 .img-prod img {
@@ -507,8 +509,55 @@ footer {
 .icons-footer {
   padding: 10px 0;
 }
-
+.nav-navigation {
+  background-color: #ffff;
+  border-bottom: 1px solid #000000;
+}
 .icons-footer a {
   padding: 0px 10px;
   color: #fca311;
+}
+.shop-section {
+  padding: 0 12px;
+}
+/*SHOP*/
+.img-item-shop img {
+  width: 100%;
+}
+.container-products-shop {
+  display: grid;
+  gap: 20px 7px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 15px;
+  height: 100%;
+}
+.container-item-shop button {
+  width: 100%;
+  border-style: none;
+  background-color: #000000;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.title-section-shop {
+  border-bottom: 1px solid #dad2d8;
+  padding: 15px 0;
+  font-size: 18px;
+}
+.item-shop:hover {
+  border: 1px solid #14213d;
+}
+.title-item-shop {
+  padding: 10px 8px;
+}
+.Shop-coincidencias {
+  height: 60vh;
+  align-content: center;
+  width: 100%;
+  margin: auto;
+  display: block;
+  text-align: center;
+  align-items: center;
+  color: red;
+  display: flex;
+  justify-content: center;
 }

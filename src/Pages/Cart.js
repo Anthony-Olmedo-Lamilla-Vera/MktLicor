@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsCartDash } from "react-icons/bs";
 import ItemProduct from "../Components/ItemProduct";
 import ModalDelete from "../Components/ModalDelete";
-import Footer from "../Elements/Footer";
 import { Link } from "react-router-dom";
 import { WiDirectionRight } from "react-icons/wi";
+import { useSelector } from "react-redux";
+import DetalleCuenta from "../Components/DetalleCuenta";
 
 function Cart() {
+  const Productos = useSelector((x) => x);
+  const [Items, setItems] = useState(Productos);
   const [Delete, setDelete] = useState(false);
-  let value = 0;
+
+  let value = true;
+
   return (
     <div className="content-cart">
       {Delete ? <ModalDelete setValue={setDelete} /> : ""}
-      {value === 1 ? (
+      {Productos && Productos.length > 0 ? (
         <div className="compras-content">
           <div className="title-cart">
             <p>Carrito de Compras </p>
           </div>
           <div className="items-cart">
-            <ItemProduct setValue={setDelete} />
-            <ItemProduct setValue={setDelete} />
+            {Items.map((item, key) => (
+              <ItemProduct
+                key={key}
+                img={item.img}
+                price={item.price}
+                nombre={item.name}
+                cantidad={item.cantidad}
+                id={item.id}
+                setValue={setDelete}
+              />
+            ))}
           </div>
 
           <div className="domicilio">
@@ -33,15 +47,7 @@ function Cart() {
               </form>
             </div>
           </div>
-          <div className="total-cart">
-            <div className="text-cart">
-              <p>Subtotal : $ 15 </p>
-              <p>iva 12% : $0 .8</p>
-              <p>total envio : $ 0 </p>
-            </div>
-            <p className="Total ">Total A Pagar : $ 15.8</p>
-          </div>
-
+          <DetalleCuenta />
           <div className="button-pagar">
             <button>Pagar</button>
           </div>
