@@ -9,16 +9,19 @@ function Footer() {
           <p>Contactos</p>
         </div>
         <div className="icons-footer">
-          <a href="" className="button-icon">
-            <BsFacebook />
-          </a>
-          <a href="" className="button-icon">
+          <a
+            href="https://api.whatsapp.com/send?phone=5930960847188&text=Que%20genial%20%20Web!"
+            target="_blank"
+            className="button-icon"
+          >
             <BsWhatsapp />
           </a>
-          <a href="" className="button-icon">
-            <BsInstagram />
-          </a>
-          <a href="" className="button-icon">
+
+          <a
+            href="https://github.com/Antocraxx?tab=repositories"
+            className="button-icon"
+            target="_blank"
+          >
             <BsGithub />
           </a>
         </div>

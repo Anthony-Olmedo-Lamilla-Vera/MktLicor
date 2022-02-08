@@ -8,10 +8,11 @@ import Menu from "./Elements/Menu";
 import Navs from "./Components/Navs";
 import Menuser from "./Elements/Menuser";
 import Footer from "./Elements/Footer";
-import Shop from "./Pages/Shop";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { ReduceFunctions } from "./Dates/Reduces";
+import Searchproducts from "./Pages/Searchproducts";
+import SearchCategory from "./Pages/SearchCategory";
 function App() {
   const [Value, setValue] = useState(false);
   const [Menu_us, setMenu_us] = useState(false);
@@ -28,7 +29,16 @@ function App() {
             <Routes>
               <Route path="/MktLicor" exact element={<Home />} />
               <Route path="/MktLicor/cart/" exact element={<Cart />} />
-              <Route path="/MktLicor/shop/:name" exact element={<Shop />} />
+              <Route
+                path="/MktLicor/shop/:name"
+                exact
+                element={<Searchproducts />}
+              />
+              <Route
+                path="/MktLicor/shop/category/:category"
+                exact
+                element={<SearchCategory />}
+              />
             </Routes>
           </main>
           <Footer />

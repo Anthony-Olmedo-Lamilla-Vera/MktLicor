@@ -1,5 +1,8 @@
 import React from "react";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { categorias } from "../Dates/ApiJson";
+import ItemCategorias from "./ItemCategorias";
 
 function Menu({ setValue }) {
   return (
@@ -20,56 +23,26 @@ function Menu({ setValue }) {
             <p>Que buscas ? </p>
             <nav>
               <ul>
-                <li>
-                  <a href="">
-                    Vodka
-                    <span>
-                      <AiFillCaretRight />
-                    </span>
-                  </a>{" "}
-                </li>
-                <li>
-                  <a href="">Whisky</a>
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Tequila</a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Ron</a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Ginebra</a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Brandy</a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Coñac</a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
-                <li>
-                  <a href="">Singani </a>{" "}
-                  <span>
-                    <AiFillCaretRight />
-                  </span>
-                </li>
+                <ItemCategorias
+                  setValue={setValue}
+                  nombre="ron"
+                  category={categorias.ron}
+                />
+                <ItemCategorias
+                  setValue={setValue}
+                  nombre="champan"
+                  category={categorias.champan}
+                />
+                <ItemCategorias
+                  nombre="tekila"
+                  setValue={setValue}
+                  category={categorias.tekila}
+                />
+                <ItemCategorias
+                  setValue={setValue}
+                  nombre="vino"
+                  category={categorias.vino}
+                />
               </ul>
             </nav>
           </div>

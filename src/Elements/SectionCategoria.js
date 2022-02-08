@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Components/Card";
+import { categorias } from "../Dates/ApiJson";
 
 function SectionCategoria() {
   return (
@@ -8,8 +9,10 @@ function SectionCategoria() {
         <h3>Categorias de Licores </h3>
       </div>
       <div className="card-categoria">
-        <Card />
-        <Card />
+        <Card category={categorias.ron} nombre="Ron" />
+        <Card category={categorias.champan} nombre="Champan" />
+        <Card category={categorias.vino} nombre="Vino" />
+        <Card category={categorias.tekila} nombre="Tekila" />
       </div>
     </section>
   );

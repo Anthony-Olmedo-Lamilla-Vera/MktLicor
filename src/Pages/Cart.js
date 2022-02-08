@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BsCartDash } from "react-icons/bs";
 import ItemProduct from "../Components/ItemProduct";
 import ModalDelete from "../Components/ModalDelete";

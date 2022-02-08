@@ -1,36 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Itemshop from "../Components/Itemshop";
-import { Products } from "../Dates/ApiJson";
-import { useLocation, useParams } from "react-router-dom";
 import { BiError } from "react-icons/bi";
 
-function Shop() {
-  const [FilProd, setFilProd] = useState([]);
-
-  let location = useParams();
-  const { name } = location;
-  useEffect(() => {
-    const { name } = location;
-
-    console.log(name);
-  }, [location]);
-  useEffect(() => {
-    const filtro = Products.filter(
-      (product) =>
-        product.nombre.toLowerCase().indexOf(name.toLowerCase()) !== -1
-    );
-    setFilProd(filtro);
-  }, [name]);
-
+function Shop({ busqueda, Dates }) {
   return (
     <section className="shop-section">
       <div className="title-section-shop">
-        <p>La busqueda es : </p> <h4>"{name}"</h4>
+        <p>La busqueda es : </p> <h4>"{busqueda}"</h4>
       </div>
 
       <div className="container-products-shop">
-        {FilProd.length > 0 &&
-          FilProd.map((product) => {
+        {Dates.length > 0 &&
+          Dates.map((product) => {
             return (
               <Itemshop
                 name={product.nombre}
@@ -44,7 +25,7 @@ function Shop() {
             );
           })}
       </div>
-      {FilProd.length === 0 && (
+      {Dates.length === 0 && (
         <div className="Shop-coincidencias">
           <p>No hay Coincidencias</p>
           <BiError />
