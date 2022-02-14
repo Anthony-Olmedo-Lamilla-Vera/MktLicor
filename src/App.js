@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./Elements/Header";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
 import { useState } from "react";
@@ -22,6 +22,7 @@ function App() {
     <>
       <Provider store={store}>
         <div className="App">
+          <Link to="/MktLicor/Agregate">Redirect Agregate</Link>
           <Header />
           {Value ? <Menu setValue={setValue} /> : ""}
           <Navs Value={Value} setValue={setValue} setMenu_us={setMenu_us} />
