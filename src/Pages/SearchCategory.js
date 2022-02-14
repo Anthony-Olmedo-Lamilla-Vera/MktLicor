@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { urlHostServer } from "../Dates/Reduces";
 
 import Shop from "./Shop";
 
@@ -8,7 +9,7 @@ function SearchCategory() {
   const [FilProd, setFilProd] = useState([]);
   const Products = [];
   const getItems = async () => {
-    await axios.get("http://localhost:2000/get-product/").then((product) => {
+    await axios.get(urlHostServer + "/get-product/").then((product) => {
       //setArrayDatos(product.data);
       Products.push(product.data);
       // console.log(product.data);

@@ -18,7 +18,7 @@ app.use(cors());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "Uploads");
+    cb(null, "./src/Backend/Uploads");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname);
@@ -68,7 +68,7 @@ app.post("/create-product/", upload.single("img"), async function (req, res) {
   try {
     const { nombre, type, price, stock } = req.body;
     let imgUrl = "";
-    const uploads = cloudinary.uploader.upload(
+    const uploads = await cloudinary.uploader.upload(
       req.file.path,
       (err, res) => (imgUrl = res.url)
     );
@@ -151,9 +151,11 @@ app.post("/send/email/", async (req, res) => {
 
 app.post("/upload-img/", upload.single("img"), function (req, res) {
   console.log(req.file);
-  const uploads = cloudinary.uploader.upload(req.file.path, (err, res) =>
+  /*const uploads = cloudinary.uploader.upload(req.file.path, (err, res) =>
     console.log(res.url)
-  );
-  res.send({ file: req.file, cloud: uploads });
+  );*/
+  res.send({ file: req.file });
 });
-app.listen(2000, () => console.log("estamos en el puerto" + 2000));
+app.listen(process.env.PORT || 2000, () =>
+  console.log("estamos en el puerto" + 2000)
+);

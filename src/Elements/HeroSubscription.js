@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RiMailSendLine } from "react-icons/ri";
 import axios from "axios";
+import { urlHostServer } from "../Dates/Reduces";
 
 function HeroSubscription() {
   const [Email, setEmail] = useState("");
@@ -8,7 +9,7 @@ function HeroSubscription() {
     e.preventDefault();
     await axios
       .post(
-        "http://localhost:2000/send/email/",
+        urlHostServer + "/send/email/",
         {
           email: Email,
         },

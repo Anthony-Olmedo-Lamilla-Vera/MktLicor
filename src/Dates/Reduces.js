@@ -5,6 +5,8 @@ export const typesActions = {
   deleteItem: "/@deleteItem",
 };
 
+export const urlHostServer = "https://servermarketlicor.herokuapp.com";
+
 export const ReduceFunctions = (stateCart = [], action) => {
   switch (action.type) {
     case typesActions.AggCart:

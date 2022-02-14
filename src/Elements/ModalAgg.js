@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
+import { urlHostServer } from "../Dates/Reduces";
 
 function ModalAgg({ setModal }) {
   const [NombreProduct, setNombreProduct] = useState("");
   const [Type, setType] = useState("Vino");
-  const [Price, setPrice] = useState(0);
+  const [Price, setPrice] = useState();
   const [Img, setImg] = useState();
-  const [Stock, setStock] = useState(0);
-  const [MensajeDeAgregado, setMensajeDeAgregado] = useState(false);
+  const [Stock, setStock] = useState();
   let refMensaje = createRef();
 
   const AgregateProduct = async (e) => {
@@ -17,13 +17,12 @@ function ModalAgg({ setModal }) {
     formData.append("type", Type);
     formData.append("price", Price);
     formData.append("stock", Stock);
-    formData.append("img", Img);
-    console.log(formData);
+    formData.append("img", Img[0]);
+
     await axios
-      .post("http://localhost:2000/create-product/", formData)
+      .post(urlHostServer + "/create-product/", formData)
       .then((response) => {
         console.log(response.data);
-
         refMensaje.current.animate(
           [
             { opacity: 1 },
@@ -53,6 +52,7 @@ function ModalAgg({ setModal }) {
           <div className="input-form">
             <label htmlFor="">Nombre</label>
             <input
+              placeholder="ingrese un nombre al producto"
               value={NombreProduct}
               onChange={(e) => setNombreProduct(e.target.value)}
               type="text"
@@ -70,6 +70,7 @@ function ModalAgg({ setModal }) {
           <div className="input-form">
             <label htmlFor="">Price</label>
             <input
+              placeholder="ingrese un precio "
               value={Price}
               onChange={(e) => setPrice(e.target.value)}
               type="number"
@@ -77,15 +78,12 @@ function ModalAgg({ setModal }) {
           </div>
           <div className="input-form">
             <label htmlFor="">Imagen</label>
-            <input
-              value={Img}
-              onChange={(e) => setImg(e.target.files)}
-              type="file"
-            />
+            <input onChange={(e) => setImg(e.target.files)} type="file" />
           </div>
           <div className="input-form">
             <label htmlFor="">Stock</label>
             <input
+              placeholder="Ingrese un Numero de Stock"
               value={Stock}
               onChange={(e) => setStock(e.target.value)}
               type="number"
@@ -95,7 +93,13 @@ function ModalAgg({ setModal }) {
             <button className="btn-agg" onClick={AgregateProduct}>
               Agregar
             </button>
-            <button className="btn-delete" onClick={() => setModal(false)}>
+            <button
+              className="btn-delete"
+              onClick={() => {
+                setModal(false);
+                window.location.reload();
+              }}
+            >
               Cancelar
             </button>
           </div>

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Products } from "../Dates/ApiJson";
+import { urlHostServer } from "../Dates/Reduces";
 import Shop from "./Shop";
 
 function Searchproducts() {
@@ -9,7 +10,7 @@ function Searchproducts() {
   const [ArrayDatos, setArrayDatos] = useState([]);
   const arr = [];
   const getItems = async () => {
-    await axios.get("http://localhost:2000/get-product/").then((product) => {
+    await axios.get(urlHostServer + "/get-product/").then((product) => {
       //setArrayDatos(product.data);
       arr.push(product.data);
       // console.log(product.data);

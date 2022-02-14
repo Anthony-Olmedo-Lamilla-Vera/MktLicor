@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createRef, useEffect, useState } from "react";
 import { returnEdi } from "../Components/Tbody";
+import { urlHostServer } from "../Dates/Reduces";
 
 function ModalEdit({ setModal, id }) {
   const [NombreProduct, setNombreProduct] = useState("");
@@ -10,7 +11,7 @@ function ModalEdit({ setModal, id }) {
   const [Stock, setStock] = useState(15);
   const getid = async () => {
     const data = [];
-    await axios.get("http://localhost:2000/edit-id/" + id).then((response) => {
+    await axios.get(urlHostServer + "/edit-id/" + id).then((response) => {
       console.log(response.data.itemEditado);
       setNombreProduct(response.data.itemEditado.nombre);
       setPrice(response.data.itemEditado.price);
@@ -29,7 +30,7 @@ function ModalEdit({ setModal, id }) {
 
     await axios
       .put(
-        "http://localhost:2000/edit-product/",
+        urlHostServer + "/edit-product/",
         {
           id: id,
           nombre: NombreProduct,
@@ -48,6 +49,7 @@ function ModalEdit({ setModal, id }) {
         setStock("");
         setType("");
         setModal(false);
+        window.location.reload();
       });
   }
   return (

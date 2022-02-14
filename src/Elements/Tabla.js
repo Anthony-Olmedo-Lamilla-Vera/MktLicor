@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Tbody from "../Components/Tbody";
 import axios from "axios";
+import { urlHostServer } from "../Dates/Reduces";
 
 function Tabla() {
   const [ArrayDatos, setArrayDatos] = useState();
   const getItems = async () => {
-    await axios.get("http://localhost:2000/get-product/").then((product) => {
+    await axios.get(urlHostServer + "/get-product/").then((product) => {
       setArrayDatos(product.data);
     });
   };
@@ -34,7 +35,7 @@ function Tabla() {
                   key={key}
                   nombre={x.nombre}
                   tipo={x.type}
-                  img="img"
+                  img={x.img}
                   price={x.price}
                   stock={x.stock}
                 />

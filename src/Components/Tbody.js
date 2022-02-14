@@ -1,22 +1,25 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
+import { urlHostServer } from "../Dates/Reduces";
 import ModalEdit from "../Elements/ModalEdit";
+import { useLocation } from "react-router-dom";
 
 function Tbody({ id, nombre, tipo, img, price, stock }) {
+  let location = useLocation();
   const [Edit, setModalEdit] = useState(false);
   function Edits() {
     console.log(id);
     setModalEdit(true);
   }
   function DeleteItem() {
-    axios
-      .delete("http://localhost:2000/delete-product/" + id)
-      .then((response) => {
-        console.log(response.data);
-      });
+    axios.delete(urlHostServer + "/delete-product/" + id).then((response) => {
+      console.log(response.data);
+      window.location.reload();
+    });
   }
+
   return (
     <>
       <tr>
@@ -34,7 +37,9 @@ function Tbody({ id, nombre, tipo, img, price, stock }) {
         </td>
         <td>{nombre}</td>
         <td>{tipo}</td>
-        <td>{img}</td>
+        <td>
+          <img src={img} width={90} height={90} alt="" />
+        </td>
         <td>{price}</td>
         <td>{stock}</td>
       </tr>
