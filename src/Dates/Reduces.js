@@ -12,8 +12,12 @@ export const ReduceFunctions = (stateCart = [], action) => {
         (repetido) => repetido.id !== action.dates.id
       );
       if (Repetido) {
+        console.log(stateCart);
+
         return [...stateCart, action.dates];
       } else {
+        console.log(stateCart);
+
         return [...stateCart];
       }
 

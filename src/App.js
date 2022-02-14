@@ -13,6 +13,7 @@ import { createStore } from "redux";
 import { ReduceFunctions } from "./Dates/Reduces";
 import Searchproducts from "./Pages/Searchproducts";
 import SearchCategory from "./Pages/SearchCategory";
+import Agregate from "./Pages/Agregate";
 function App() {
   const [Value, setValue] = useState(false);
   const [Menu_us, setMenu_us] = useState(false);
@@ -39,6 +40,7 @@ function App() {
                 exact
                 element={<SearchCategory />}
               />
+              <Route path="/MktLicor/Agregate" exact element={<Agregate />} />
             </Routes>
           </main>
           <Footer />

@@ -11,16 +11,16 @@ function Shop({ busqueda, Dates }) {
 
       <div className="container-products-shop">
         {Dates.length > 0 &&
-          Dates.map((product) => {
+          Dates.map((product, key) => {
             return (
               <Itemshop
                 name={product.nombre}
                 price={product.price}
                 img={product.img}
                 type={product.type}
-                key={product.id}
-                id={product.id}
-                cantidad={product.cantidad}
+                key={key}
+                id={product._id}
+                cantidad={1}
               />
             );
           })}

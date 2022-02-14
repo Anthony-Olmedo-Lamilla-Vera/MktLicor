@@ -11,6 +11,7 @@ function Navs({ setValue, setMenu_us }) {
   const SearchPress = (e) => {
     e.preventDefault();
     navigate("/MktLicor/shop/" + ValueInputShop);
+    setValueInputShop("");
   };
   return (
     <nav className="nav-navigation">

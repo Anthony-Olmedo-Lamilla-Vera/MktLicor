@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFacebook, BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsGithub, BsWhatsapp } from "react-icons/bs";
 
 function Footer() {
   return (
@@ -13,11 +13,13 @@ function Footer() {
             href="https://api.whatsapp.com/send?phone=5930960847188&text=Que%20genial%20%20Web!"
             target="_blank"
             className="button-icon"
+            rel="noreferrer"
           >
             <BsWhatsapp />
           </a>
 
           <a
+            rel="noreferrer"
             href="https://github.com/Antocraxx?tab=repositories"
             className="button-icon"
             target="_blank"
