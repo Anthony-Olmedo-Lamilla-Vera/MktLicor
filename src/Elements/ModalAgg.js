@@ -20,7 +20,7 @@ function ModalAgg({ setModal }) {
     formData.append("img", Img[0]);
 
     await axios
-      .post(urlHostServer + "/create-product/", formData)
+      .post("http://localhost:2000/create-product/", formData)
       .then((response) => {
         console.log(response.data);
         refMensaje.current.animate(
