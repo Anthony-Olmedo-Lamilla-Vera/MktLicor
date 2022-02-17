@@ -14,6 +14,8 @@ import { ReduceFunctions } from "./Dates/Reduces";
 import Searchproducts from "./Pages/Searchproducts";
 import SearchCategory from "./Pages/SearchCategory";
 import Agregate from "./Pages/Agregate";
+import DesignCorreo from "./Elements/DesignCorreo";
+import Login from "./Pages/Login";
 function App() {
   const [Value, setValue] = useState(false);
   const [Menu_us, setMenu_us] = useState(false);
@@ -42,6 +44,7 @@ function App() {
                 element={<SearchCategory />}
               />
               <Route path="/MktLicor/Agregate" exact element={<Agregate />} />
+              <Route path="/MktLicor/Login" exact element={<Login />} />
             </Routes>
           </main>
           <Footer />

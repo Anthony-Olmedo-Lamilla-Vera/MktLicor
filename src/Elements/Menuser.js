@@ -1,8 +1,10 @@
 import React from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { BsTriangleFill } from "react-icons/bs";
+import { useGetuser } from "../Hooks/useUser";
 
 function Menuser() {
+  const { User } = useGetuser();
   return (
     <div className="cont-menu-user">
       <section className="menu-user">
@@ -11,10 +13,12 @@ function Menuser() {
         </div>
         <div className="title-menu-user">
           <div className="img-user">
-            <BiUserCircle />
+            <div className="avatar-user">
+              <img src={User && User.photoURL} alt="" />
+            </div>
           </div>
           <div className="nombre-user">
-            <p>Nombre de Usuario</p>
+            <p>{User && User.displayName}</p>
           </div>
         </div>
         <div className="datos-personales">

@@ -4,8 +4,10 @@ import { BsCartCheck } from "react-icons/bs";
 import { FaSearchengin } from "react-icons/fa";
 import { RiMenuUnfoldFill } from "react-icons/ri";
 import { Link, useHref, useNavigate } from "react-router-dom";
+import { useGetuser } from "../Hooks/useUser";
 function Navs({ setValue, setMenu_us }) {
   const [ValueInputShop, setValueInputShop] = useState("");
+  const { User } = useGetuser();
   let user = true;
   const navigate = useNavigate();
   const SearchPress = (e) => {
@@ -43,9 +45,19 @@ function Navs({ setValue, setMenu_us }) {
             <BsCartCheck size={25} color="#000" />
           </button>
         </Link>
-        <button onClick={() => setMenu_us(true)}>
-          <AiOutlineUser size={25} color="#000" />
-        </button>
+        {User ? (
+          <span onClick={() => setMenu_us(true)}>
+            <div className="avatar-user">
+              <img src={User.photoURL} alt="" />
+            </div>
+          </span>
+        ) : (
+          <Link to="/MktLicor/login">
+            <button onClick={() => setMenu_us(true)}>
+              <AiOutlineUser size={25} color="#000" />
+            </button>
+          </Link>
+        )}
       </div>
     </nav>
   );

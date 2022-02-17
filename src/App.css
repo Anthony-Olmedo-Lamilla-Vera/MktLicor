@@ -641,3 +641,134 @@ select {
   background-color: green;
   color: #ffffff;
 }
+
+.logo_msg {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 8px;
+}
+.cont-mensaje {
+  background: hsla(186, 33%, 94%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBF4F5", endColorstr="#B5C6E0", GradientType=1 );
+  padding: 15px 20px;
+  margin: 0 auto;
+  text-emphasis: none;
+  width: 250px;
+  border-radius: 5px;
+}
+.cont-mensaje header {
+  text-align: center;
+}
+.cont-mensaje header p {
+  padding: 20px 0;
+  text-align: justify;
+}
+.cont-mensaje header h1 {
+  color: #fb8500;
+  border-bottom: 1.5px solid #fb8500;
+}
+.cont-card-sesion {
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px 10px;
+  background-color: #8ecae673;
+  min-height: 70vh;
+  border-radius: 8px;
+}
+.cont-card-sesion form {
+  background-color: #219dbc83;
+  padding: 20px 10px;
+  margin: 0 auto;
+  text-align: center;
+
+  border-radius: 15px;
+}
+.form-login-input label {
+  display: block;
+  padding-bottom: 15px;
+  font-weight: lighter;
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-login-input input {
+  padding: 10px 10px;
+  width: 90%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  outline: none;
+  border-style: none;
+}
+.cont-card-sesion p {
+  text-align: center;
+  margin: 15px 0;
+  padding: 15px 15px;
+  color: #023047;
+  border-bottom: 1.5px solid #023047;
+
+  font-weight: bold;
+}
+.cont-card-sesion nav {
+  background-color: #ffffff;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.cont-card-sesion nav li {
+  list-style: none;
+}
+.cont-card-sesion nav li button {
+  border-style: none;
+  background-color: #fff;
+  font-size: 40px;
+  height: max-content;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.head-login h1 {
+  padding-bottom: 15px;
+  color: #023047;
+  margin: 15px 0;
+  border-bottom: 1.5px solid #023047;
+}
+.cont-card-sesion form button {
+  width: 80%;
+  padding: 15px 20px;
+
+  border-radius: 5px;
+  text-align: center;
+  border-style: none;
+  color: #fff;
+  background-color: #143642;
+  margin: 15px 0;
+  cursor: pointer;
+}
+.avatar-user img {
+  border-radius: 50px;
+  width: 50px;
+}
+.nav-profile {
+  display: flex;
+  align-items: center;
+}
