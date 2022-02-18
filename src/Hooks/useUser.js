@@ -1,22 +1,27 @@
-import { FacebookAuthProvider, getRedirectResult } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  getRedirectResult,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../Dates/LoginFirebase";
 
 export const useGetuser = () => {
   const [User, setUser] = useState();
   useEffect(() => {
-    getRedirectResult(auth)
-      .then((result) => {
-        const user = result.user;
-
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(User);
         setUser(user);
-        console.log(user);
-      })
-      .catch((error) => {
-        console.log(error);
-
         // ...
-      });
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
   }, [User]);
   return { User };
 };
