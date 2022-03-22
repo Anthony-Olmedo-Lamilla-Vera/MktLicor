@@ -10,7 +10,7 @@ function SectionNovedades() {
       <div className="cont-card-novedades">
         <CardNovedades />
         <CardNovedades />
-        <CardNovedades />
+
         <CardNovedades />
       </div>
     </section>

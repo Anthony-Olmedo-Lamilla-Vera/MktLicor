@@ -524,13 +524,19 @@ footer {
   padding: 0 12px;
 }
 /*SHOP*/
+.img-item-shop {
+  text-align: center;
+}
 .img-item-shop img {
-  width: 100%;
+  object-fit: cover;
+  width: 100px;
+  height: 200px;
 }
 .container-products-shop {
   display: grid;
   gap: 20px 7px;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(1fr, 1fr);
   margin-top: 15px;
   height: 100%;
 }
@@ -550,6 +556,7 @@ footer {
   border: 1px solid #14213d;
 }
 .title-item-shop {
+  height: 120px;
   padding: 10px 8px;
 }
 .Shop-coincidencias {
@@ -771,4 +778,87 @@ select {
 .nav-profile {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 300px) {
+  .container-products-shop {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .img-prod {
+    width: 50px;
+  }
+}
+@media (min-width: 300px) {
+  .item-cart {
+    grid-template-rows: 250px;
+    overflow: hidden;
+    text-align: center;
+    place-content: center;
+    place-items: center;
+  }
+  .back-menu {
+    width: 50%;
+  }
+  .img-prod {
+    width: 90px;
+  }
+  .content-cart {
+    text-align: center;
+  }
+  .img-prod img {
+    width: 70%;
+    object-fit: cover;
+  }
+  .cont-card {
+    height: max-content;
+  }
+  .img-card img {
+    object-fit: contain;
+    height: 100%;
+  }
+  .img-card {
+    overflow: hidden;
+    height: 200px;
+  }
+}
+@media (min-width: 550px) {
+  .container-products-shop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .img-prod img {
+    width: 50%;
+    object-fit: cover;
+  }
+  .img-prod {
+    width: 130px;
+  }
+}
+@media (min-width: 820px) {
+  .img-prod {
+    width: 150px;
+    object-fit: none;
+    text-align: center;
+  }
+  .img-card {
+    height: 300px;
+  }
+  .text-banner {
+    text-align: center;
+  }
+  .title-banner {
+    text-align: center;
+  }
+  .banner-suscripcion > * {
+    font-size: 25px;
+  }
+  body {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .cont-card {
+    width: 80%;
+  }
+  .card-categoria {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

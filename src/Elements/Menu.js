@@ -25,8 +25,8 @@ function Menu({ setValue }) {
               <ul>
                 <ItemCategorias
                   setValue={setValue}
-                  nombre="ron"
-                  category={categorias.ron}
+                  nombre="Vodka"
+                  category={categorias.vodka}
                 />
                 <ItemCategorias
                   setValue={setValue}

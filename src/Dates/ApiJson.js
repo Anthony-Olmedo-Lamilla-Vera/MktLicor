@@ -1,5 +1,5 @@
 export let categorias = {
-  ron: "ron",
+  vodka: "vodka",
   champan: "champan",
   tekila: "tekila",
   vino: "vino",

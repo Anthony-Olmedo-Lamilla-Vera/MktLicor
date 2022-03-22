@@ -5,12 +5,73 @@ import ModalDelete from "../Components/ModalDelete";
 import { Link } from "react-router-dom";
 import { WiDirectionRight } from "react-icons/wi";
 import { useSelector } from "react-redux";
+import ReactDOM from "react-dom";
 import DetalleCuenta from "../Components/DetalleCuenta";
+const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 function Cart() {
   const Productos = useSelector((x) => x);
   const [Items, setItems] = useState(Productos);
   const [Delete, setDelete] = useState(false);
+  const createOrder = (data, actions) => {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            currency_code: "USD",
+            value: "102",
+            breakdown: {
+              item_total: {
+                currency_code: "USD",
+                value: "100",
+              },
+              tax_total: {
+                currency_code: "USD",
+                value: "2",
+              },
+            },
+          },
+        },
+      ],
+
+      items: [
+        {
+          name: "First Product Name" /* Shows within upper-right dropdown during payment approval */,
+          description:
+            "Optional descriptive text.." /* Item details will also be in the completed paypal.com transaction view */,
+          unit_amount: {
+            currency_code: "USD",
+            value: "50",
+          },
+          quantity: "1",
+          tax: {
+            currency_code: "USD",
+            value: "1",
+          },
+          category: "PHYSICAL_GOODS",
+        },
+        {
+          name: "First Product Name" /* Shows within upper-right dropdown during payment approval */,
+          description:
+            "Optional descriptive text.." /* Item details will also be in the completed paypal.com transaction view */,
+          unit_amount: {
+            currency_code: "USD",
+            value: "50",
+          },
+          quantity: "1",
+          tax: {
+            currency_code: "USD",
+            value: "1",
+          },
+        },
+      ],
+    });
+  };
+  const onApprove = (data, actions) => {
+    return actions.order.capture().then((cap) => {
+      console.log(cap);
+    });
+  };
 
   let value = true;
 
@@ -51,6 +112,10 @@ function Cart() {
           <div className="button-pagar">
             <button>Pagar</button>
           </div>
+          <PayPalButton
+            createOrder={(data, actions) => createOrder(data, actions)}
+            onApprove={(data, actions) => onApprove(data, actions)}
+          />
         </div>
       ) : (
         <div className="cont-vacio">

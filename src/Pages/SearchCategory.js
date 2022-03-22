@@ -10,13 +10,8 @@ function SearchCategory() {
   const Products = [];
   const getItems = async () => {
     await axios.get(urlHostServer + "/get-product/").then((product) => {
-      //setArrayDatos(product.data);
       Products.push(product.data);
-      // console.log(product.data);
-      //console.log(ArrayDatos);
-      console.log(Products[0]);
     });
-    // setArrayDatos(arr[0]);
   };
   let location = useParams();
 
