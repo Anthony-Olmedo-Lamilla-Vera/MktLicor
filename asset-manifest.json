@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MktLicor/static/css/main.515cce30.css",
-    "main.js": "/MktLicor/static/js/main.c97a718e.js",
+    "main.css": "/MktLicor/static/css/main.4fd73c17.css",
+    "main.js": "/MktLicor/static/js/main.7df96bd5.js",
     "index.html": "/MktLicor/index.html",
-    "main.515cce30.css.map": "/MktLicor/static/css/main.515cce30.css.map",
-    "main.c97a718e.js.map": "/MktLicor/static/js/main.c97a718e.js.map"
+    "main.4fd73c17.css.map": "/MktLicor/static/css/main.4fd73c17.css.map",
+    "main.7df96bd5.js.map": "/MktLicor/static/js/main.7df96bd5.js.map"
   },
   "entrypoints": [
-    "static/css/main.515cce30.css",
-    "static/js/main.c97a718e.js"
+    "static/css/main.4fd73c17.css",
+    "static/js/main.7df96bd5.js"
   ]
 }
